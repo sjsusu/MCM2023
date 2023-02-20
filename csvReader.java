@@ -22,7 +22,8 @@ public class csvReader {
         for (int i = 0; i < 26; i++) {
             int count = Methods.checkColumn(data, 2, letters[i]);
             letterCounts[i] = (char) count;
-            System.out.println(letters[i] + ": " + count);
+            // System.out.println(letters[i] + ": " + count);
+            System.out.println(count);
         }
 
         //Checks the column for a word and prints out the number of times it appears
@@ -32,10 +33,19 @@ public class csvReader {
 
         //Checks the column for a letter at a specific index and prints out the number of times it appears
         for (char letter: letters) {
-            count = Methods.checkIndex(data, 2, 3, letter);
-            System.out.println(count);
+            int count2 = Methods.checkIndex(data, 2, 4, letter);
+            System.out.println(count2);
         }
- 
+
+        //Calculates the values of each word in the column and prints them out
+        double[] values = Methods.stringValues(data, 2);
+        for (double value: values) {
+            System.out.println(value);
+        }
+        
+        //Calculates the value of a word and prints it out
+        double value = Methods.stringValue("eerie");
+        System.out.println(value);
 
     }
 
